@@ -55,10 +55,10 @@
 
 ---
 
-## 🎮 Contribution Graph  
+## 🐍 Contribution Snake  
 ![Snake animation](https://github.com/saurav178/saurav178/blob/output/github-contribution-grid-snake.svg)
 
----
+
 
 ## 🌎 Connect with Me  
 <p align="left">
