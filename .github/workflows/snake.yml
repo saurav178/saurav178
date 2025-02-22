@@ -1,8 +1,8 @@
-name: Generate Snake Graph
+name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs daily at midnight
+    - cron: "0 0 * * *"  # Runs daily at midnight UTC
   workflow_dispatch: # Allows manual trigger
 
 jobs:
@@ -12,16 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Generate Snake Animation
-        uses: Platane/snk@master
+      - name: Generate Snake
+        uses: Platane/snk@v3
         with:
-          github_user_name: saurav178
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          github_user_name: ${{ github.repository_owner }}
+          svg_out_path: dist/github-contribution-grid-snake.svg
 
-      - name: Push Snake Graph
+      - name: Commit and push
         uses: EndBug/add-and-commit@v9
         with:
-          message: "Updated snake graph"
+          message: "Updated snake animation"
           add: "dist/github-contribution-grid-snake.svg"
